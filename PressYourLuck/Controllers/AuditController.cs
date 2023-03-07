@@ -12,11 +12,11 @@ namespace PressYourLuck.Controllers
 {
     public class AuditController : Controller
     {
-        private AuditContext _auditContext;
-        public AuditController (AuditContext ctx)
+/*        private AuditContext _auditContext;
+*/        public AuditController (/*AuditContext ctx*/)
         {
-            this._auditContext = ctx;
-        }
+/*            this._auditContext = ctx;
+*/        }
 
         [HttpGet()]
         public IActionResult CashIn (Player player)
@@ -28,8 +28,8 @@ namespace PressYourLuck.Controllers
                 Amount = player.CoinBalance,
                 AuditTypeId = "ci"
             };
-            _auditContext.Audits.Add(record);
-            _auditContext.SaveChanges();
+            /*_auditContext.Audits.Add(record);
+            _auditContext.SaveChanges();*/
             return RedirectToAction("Index", "Home");
         }
 
@@ -44,8 +44,8 @@ namespace PressYourLuck.Controllers
                 AuditTypeId = "co"
             };
 
-            _auditContext.Audits.Update(record);
-            _auditContext.SaveChanges();
+            /*_auditContext.Audits.Update(record);
+            _auditContext.SaveChanges();*/
 
             GameHelper.ClearCurrentGame(HttpContext);
             HttpContext.Response.Cookies.Delete("playerName");
@@ -69,8 +69,8 @@ namespace PressYourLuck.Controllers
                 AuditTypeId = "w"
             };
 
-            _auditContext.Audits.Update(record);
-            _auditContext.SaveChanges();
+            /*_auditContext.Audits.Update(record);
+            _auditContext.SaveChanges();*/
 
             return RedirectToAction("Index", "Game");
         }
@@ -86,13 +86,13 @@ namespace PressYourLuck.Controllers
                 AuditTypeId = "l"
             };
 
-            _auditContext.Audits.Update(record);
-            _auditContext.SaveChanges();
+           /* _auditContext.Audits.Update(record);
+            _auditContext.SaveChanges();*/
 
             return RedirectToAction("Index", "Game");
         }
 
-        [HttpGet()]
+       /* [HttpGet()]
         public IActionResult Index()
         {
             if (!HttpContext.Session.Keys.Contains("filter"))
@@ -154,6 +154,6 @@ namespace PressYourLuck.Controllers
             ViewBag.Win = currentTab[4];
 
             return View(model);
-        }
+        }*/
     }
 }
