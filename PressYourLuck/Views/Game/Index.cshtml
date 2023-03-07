@@ -1,0 +1,64 @@
+﻿@model CurrentGameViewModel
+@{
+    double balance = CoinsHelper.GetTotalCoins(Context);    
+}
+
+@section scripts {    
+    <script type="text/javascript">
+        window.onbeforeunload = function (e) {
+            var e = e || window.event;
+            if (!e) 
+                return @GameHelper.TakeCoins(Context);      
+        };
+    </script>
+}
+
+<div class="row">
+    <h3 class="col-8 bg-light" style="text-shadow: 2px 2px #ffffff;">Current Bet: @Model.CurrentBetAmnt.ToString("C2")</h3>
+    @if (@Model.CurrentBetAmnt == 0.00)
+    {
+        if (balance != 0.00)
+        {
+            <a id="button" asp-controller="Home" asp-action="Index" class="btn btn-primary bg-danger col-2">TRY AGAIN</a>
+        }
+        else
+        {
+            <a id="button" asp-controller="Player" asp-action="CashOut" class="btn btn-primary bg-danger col-2">TRY AGAIN</a>
+        }
+    }
+    else
+    {
+        <a id="button" asp-controller="Player" asp-action="TakeCoins" class="btn btn-primary bg-success col-2">TAKE THE COINS</a>
+    }
+</div>
+
+<div class="row" id="gamearea">
+    @foreach (var tile in Model.CurrentTiles)
+    {
+        <div class="col-2">
+            <div class="card">
+                @if (tile.Visible == false)
+                {
+                    <img src="~/images/unknown.png" class="card-img-top" alt="...">
+                    <a asp-route-id="@tile.TileIndex" asp-action="FlipCard" class="btn btn-primary bg-success">Choose</a>
+                }
+
+                else if (tile.Value == "0.00")
+                {
+                    <img src="~/images/bust.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div style="text-shadow: none !important; font-weight: bold">@tile.Value</div>
+                    </div>
+                }
+                else
+                {
+                    <img src="~/images/money.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div style="text-shadow:none !important; font-weight:bold">@tile.Value</div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+

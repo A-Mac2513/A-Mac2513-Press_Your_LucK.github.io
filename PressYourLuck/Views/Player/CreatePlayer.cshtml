@@ -1,0 +1,30 @@
+﻿@model Player
+
+@{
+    string title = "Create a Player";
+    ViewBag.Title = title;
+}
+
+<div class="jumbotron">
+    <h2 >Welcome To the game PRESS YOUR LUCK!</h2>
+</div>
+
+<h3 class="title">@title</h3>
+
+<form asp-controller="Player" asp-action="CreatePlayer" method="post" enctype="application/x-www-form-urlencoded">
+    <div id="modelError" asp-validation-summary="ModelOnly" class="text-danger text-xl-center bg-white" style="text-shadow:none !important;"></div>
+
+    <div class="form-group">
+        <label asp-for="PlayerName">Name:</label>
+        <input type="text" asp-for="PlayerName" class="form-control" />
+        <span asp-validation-for="PlayerName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CoinBalance">Initial Balance:</label>
+        <input type="text" asp-for="CoinBalance" class="form-control" />
+        <span asp-validation-for="CoinBalance" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="@ViewBag.Action" />
+</form>
