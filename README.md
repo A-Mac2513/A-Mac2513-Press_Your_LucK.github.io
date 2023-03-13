@@ -35,7 +35,7 @@ ___
  > The Azure deployment [yaml file](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/tree/main/PressYourLuck/.github/workflows) can be found here. This is what is used to set up the cloud enviroment for hosting the app.
  > The [Domain objects](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/tree/main/PressYourLuck/Models) can be found in the Models directory.
  > The HTML pages can be found in the [View directory](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/tree/main/PressYourLuck/Views)
- > And all the business logic can be found in the [COntrollers directory](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/tree/main/PressYourLuck/Controllers) 
+ > And all the business logic can be found in the [Controllers directory](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/tree/main/PressYourLuck/Controllers) 
 
 ___
 # For Developers
