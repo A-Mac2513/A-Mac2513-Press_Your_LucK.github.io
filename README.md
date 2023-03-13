@@ -97,3 +97,8 @@ ___
 # How to \'RUN\' the App
 > The link that is given to you on the Azure portal is how this app is \'run\'.  By just clicking it you can play the game.
 
+___
+# WIKI
+> Click [Wiki](https://github.com/A-Mac2513/A-Mac2513-Press_Your_LucK.github.io/wiki) to find the Wiki\'s for this repo
+> This is where you will find the answer to the __(25 marks) “Demonstrate Understanding of Version control”__
+
