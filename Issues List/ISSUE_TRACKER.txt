@@ -1,0 +1,8 @@
+ISSUE TRACKER
+
+ISSUE #1:
+	Create a dark mode to help with accessibility
+	
+ISSUE #2:
+	Get Audit function up and running
+		- add database to Azure
