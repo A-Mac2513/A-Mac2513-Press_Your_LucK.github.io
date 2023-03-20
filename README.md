@@ -17,7 +17,7 @@
 
  ___
   # Game Play
- > To start with, you enter your Name and the number of coins you’re starting with.
+ > To start with, you enter your First Name (one word with no spaces) and the number of coins you’re starting with.
  > To start playing, you choose how many coins to bet, then 12 tiles are shuffled face down.
  > Each round you either choose a tile or take the coins you’ve won so far.  
  > If you choose a tile and it shows 0, you bust and lose your bet.  
